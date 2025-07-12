@@ -1,0 +1,669 @@
+[
+    {
+        "name": "aliexpress-mexico",
+        "id": "17XwqoLtoMM-qCnOHc3TlwrnHRkBLjFI8",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1WfUG_AySx0DO1dH9ncwrGhoMcXocFQRX",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1ApBF8G4VIYxTU85KlGOEhdgDV4EwdnGI",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1eamjaUJJmSA0Rg0t59HRmuzc7vugfiXi",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "amazon-mexico",
+        "id": "1qWdFvF299MzuEQ6hb0G7Upl-9Hj3tWfK",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "11UQ3KLSy40722MCZ6a1RFGw4KS1tQUam",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1wtyFuXYiKOuFGintSWp9QkPyDtEALF1F",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1JUIPz0MNm9mdC-yaZl6bITpFhTLXmm9N",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "chedraui",
+        "id": "1fu8uuaU3q3qBIvsHL62x3AuqqvCUzEnw",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1x-RdjA2yiokA6EpKqkeJLF_K8JWnJ2Hr",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1CH9dStVrFhS_p677q3JqqhUMz8huT1yy",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1MynP7vi79vBpYggOsMnWEUv0wtiuMATL",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "construrama",
+        "id": "15hqBGEcdCnZFVeMA5pwmRL8RsIOZJRHG",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "17M30M1OZV8-rTpSaSGYqwjnrIS27pdpE",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1KTlaDcotAaTuCHXkLsRZR1xN8Qe-GopA",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1s52TLVeje8-zXgzAdDxlZTx21-ERWQ5G",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "coppel",
+        "id": "1UyMQdwbT5Xb-T2lfs_S4mAZyGO0SSu-D",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1UeXkoaG6QCcWiN1KBWvo6R-KS2Pef2IA",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1Hda5nuHR7UYnLx-D6zcZd2BFvNdc7Fyy",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "14YcMgH8C-6MHsU4Hgy5dYd8iwb7JCMkI",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "cruz-verde",
+        "id": "1ZMLI6gZlu63zqO3bhqenLBhdeZIa5duP",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1VX1P7tGBlAlh-IJBIHjodSHFxrao0PS8",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1wS-8e9WvFQ1GayNT29t04eQM-aOCJDwX",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1EXFEOkDfw1enSjnPUB8AjDl-gBK2ZE_a",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "el-palacio-de-hierro",
+        "id": "1OCsgIJfR1uoIQRGHynxYw7m8ZVajiWkN",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1f6UpjBtZmRyO_Bd_frsfM0FWghx1Ox_o",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1jB9U8OMeGciUXBAewQoRQcKVYFmFhOy4",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1Zm2alctYGNv3NCHHsZSetkDmp3K53e_p",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "elektra",
+        "id": "16fw7NJbhkSsXuxuQNFsEgKT5bpHcC7IS",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "19EiUwnBUzSHVWjLzPdnudk5_91Ap1lYi",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1ev4Ze5YqEkYS3Q0_rsNnjoBnzAvsb2hT",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1CIcXbp3M0h6rRsevrrQ1689juAoDFZtP",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "exito",
+        "id": "1r-1B47keUEi3GClcmJYmlsCcahH4W2UN",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1qwNXtbGUgIu_46eXKeL2JnXUqdjUiT32",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1JKNRL-N-ZStUUotxlVBSWk5km-HWa6WK",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1yDSOSrCLxpHr7vGc5dJgW4KdeYSWnY0I",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "falabella-dep",
+        "id": "13cf5B9so8ugBLku6kZu4RVUJpeXH904y",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1AVI0MX068zMce7V5adfFNtplUtYMRgua",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1-J8MvFghP40VoC78vHtB2_cUXHBPUday",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1IIzpjlT9IVXA8qLJA5LBpUsL49on40jr",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "farmacias-del-ahorro",
+        "id": "11_ZgEFURwGDV1DYrFnQPqpi-rkdvxes0",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1yn1la0-FGNL_fRhHzd4W-XvG2av72RuK",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1aGwZJ7lcqRzrVW2tj_KzEi1y73E3zbYr",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "14f-QOUr0_Bzk00FPaHmh29tNxVxJTr1c",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "farmacias-guadalajara",
+        "id": "1HPsW06VHi6UOn-TcNjC1sPnbVbXXL-7j",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1BNpgVKsHeaPXL8lcLgfhVqHvOPp6Id7K",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1q_ig9Jl_oisIxUDLaRT2FDfLqTM9dGVe",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1T_3eX2qOcnwdnlzh7GjSe9NTd05Gnv6T",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "farmacias-san-pablo",
+        "id": "1dQtmXdAZ_DeHAyJo2d-larN20CHYmC-b",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1e1elNOqjfSahEu6mP9fGykWd0sfo0W-O",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1LMBns-SePU5Arigbjv3WCfk8e14V61F2",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1Ofm34ZBAjN1tprmUpish16BUNNGYc2og",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "fravega",
+        "id": "1Imlba2uwKTquCX7q9BBEj7tykYD6PLr4",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1R02NONcgguMAjfBHH_pu2BUVKQD6TonU",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1VT_O2yiS8stupRTJbToWVpJgH1NWgIHt",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1eJzP6jw-heoodZ1zB4VTb90u25TBepek",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "jumbo",
+        "id": "159Ob1Ie-L1aO5rLr9YGay2PFKkwwJd5s",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1ZDkkpne7x9Yi-3ikBMokuk3-WWYYpF5h",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1CeUWU2T-fZ93DmEtviEns_rWL20knzO8",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1nutI_89oxO0Sv_BBlFtcvIlVJBeVPZGf",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "la-anonima",
+        "id": "16N3MH6iAS8l8yN3GDzQsE2YQ5s3Av8oi",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1R7WoMZne5mEZ1Ce-Akq7SkNvs7uPTqyd",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1OistFmQFmY7w3glTxRT05ajoCbqO4dnV",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1O0V_ovx5kmF296BzIo300ZW8OoA1-qVH",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "liverpool",
+        "id": "17EIJkkF72BJKIl5syTui037X7xrb6dwd",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1AWApy2uKiNSZt2ioVzM2ooXYk77g9TjH",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1SdzcxO8Jyn4XC-vzERv6Z69ZYxJ9zD8r",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "163wIxqnpVyoT4fvizpQYqovIKUImUN8N",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "mercadolibre-argentina",
+        "id": "1b5AnyU8-_XlP2pDupj3UBd-BnzdZok53",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1Y1P9gcKrUkSAXJLZKV0VTu4RS6RV1weC",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "12LR7ECbR5lkp6YzPylOJ3NyQtu9lH9Zn",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1XPoJbjYb16AIl4pnhrhHUzfYdtOtGb6f",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "mercadolibre-mexico",
+        "id": "1bblyfr9fs-4uLpfqKg5yxysM6A0Y7MUj",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1u0U6gAMpTKUKQAM8UBSVeh5ikd8ZZXbN",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1FxP44tRV-PAP7AXg86SEM1fXFnapO1GF",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1yAbY9WOyLqxKTIAmRajcS4UB7GakyJB7",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "office-depot",
+        "id": "1MQBB8JW3AcESI-gsB2NgBHgqLAUmnxXA",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1P8kVJoxPU9XxmQw8I3eVQg9J1FkBqY4V",
+                "name": "mobile-site",
+                "type": "journey"
+            },
+            {
+                "id": "1N_gaAzWub3gW9eyYRXUSh6j-EMuk3iLw",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "15Av9WPYPcRI4qR_4M70KIUtjgqJ0KdtP",
+                "name": "mobile-app",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "olimpica",
+        "id": "1isjNxyrgORAbN1oUuRN-UkyFEC47WxZG",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1N2GxVn_Ro_HO2o1kBzY2voTUomuBWzEl",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "13xKwCaUWSzMA8pHIX9YK0VN3bFqR1VeV",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1wBOucU353ewhuHo2zGPo1wRDij0skbdi",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "paris",
+        "id": "1_8oD9c35eFY6E6xGWy9dCfGANCoJPS0P",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "13UcKshHC8dI2nUXAXY2LVRDQ17EGCu4U",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1a2XiuUsBEdv65jh_5GzV6vErglNiL5uD",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1dZCGQH6txZFb_wzvBzIvKzU_3KZNyJct",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "plaza-vea",
+        "id": "1G-gEljPWsqNXDoYT4q2_EGKPivYyVxCW",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "14cUHcPY46cjp1P_fkd9Ey0-d2oYYcvd3",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1qN9Dpqo-EIVKrb_xYtKvle6zxuIynJK2",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "10-ZoOR_1LTjTBd1ybixNtmFJ1Sm1veby",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "ripley",
+        "id": "1MYxq_xLO7F6doDKZeQIA_Xm7pekVhumm",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "13eITVuKFQEAuajqUa-UGPIGPgIlAJ9_M",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "19zxrW_Z9HpGe9Vw4fOE9TO3mukA1FTFl",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1Vc7ESKj1hrfa5ei9mbouJoMPcZbuvnEE",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "shein",
+        "id": "1H7dPKdsxSLIPUOXe2iXtq8Ut8-0Sw4j8",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "13rWzRWea8kXsroqmw2eS4uX7QTYXIkhm",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "12HOtaHiEfQN1-R3Gmcko7h8BMhwbB4Mt",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1KzlEDNvyGeHSoWQiRYow4ZKRdPhMJm84",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "soriana",
+        "id": "1hTxMZsf1ziJPFENG2dJBQUBb8PEgTK1f",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1NkeXFbx9K3esR8wkMEyj6o1fxe8k2OqS",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "17RUzEqs0oxKklspg4jSMqPYtlYRqmgt9",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1KIx7vK019khIl7V6cyhAgGGfnKaFUe0T",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "temu-mexico",
+        "id": "17S5-qhp8aKIDq7Y73pZlQ9VUbAIZ02d6",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1KPGgAQ1Cu_7i87CLW5SBpU9QD4FR6jm2",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1Ai59YwIt3GVcb5uC7xgQ4-aAhHdsg1e6",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1brWPWfmWbanwCScvNozu5tAhIgiPjEc-",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "unimarc",
+        "id": "14hhsZ-iYAYcTzxqH2rRe6Y5T28Dwcp5H",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1CiMmCdAp-dGy-CimA3gnXAtNd2gFfdSY",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1Wl0a0eH5GmGFotsbSiZdB-L1huuYhhWR",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1WO0__A7a0QxUFEXBAbvV7_hn2YyvFlsk",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "walmart-mexico",
+        "id": "1wuu9PSqhVGpAevJVq2tes8nODCWtenF2",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1dKH284ob2cxcGMUFOy6CaUBQVlqXPMsj",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1oxSCnO81tL5TKXsahEfXYeri7CqN-DCx",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1LGE380sifXO3THib9JquXWjtJPqDLY3s",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "zz_BKP",
+        "id": "1l7Sn01xQF4WzM9ddiQgmlCVph1Ef_O-2",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1u2w3VpsUGeTDagii_abxU_xCIuSJPw0Z",
+                "name": "na",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "zz_Temp",
+        "id": "1xs15GwSlQv03HumYNBtuC8ZTAZjL2ASw",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1UUcWBgr6pQtZ3UX7DEWx6eC5isE3T-Pf",
+                "name": "Nf",
+                "type": "journey"
+            },
+            {
+                "id": "1qbv_eQchHPxg03vPBnlu7NXGx0SKyeOh",
+                "name": "na",
+                "type": "journey"
+            }
+        ]
+    }
+]
