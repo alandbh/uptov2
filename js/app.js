@@ -1,9 +1,17 @@
 // Firebase configuration (substitua com a sua)
+// const firebaseConfig = {
+//     apiKey: "YOUR_API_KEY",
+//     authDomain: "YOUR_PROJECT.firebaseapp.com",
+//     projectId: "YOUR_PROJECT_ID",
+//     appId: "YOUR_APP_ID",
+// };
 const firebaseConfig = {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    appId: "YOUR_APP_ID",
+    apiKey: "AIzaSyCOl1-8HoQQMB5fQdsJrfSwvR9qOlWeTkc",
+    authDomain: "uptov2-da01d.firebaseapp.com",
+    projectId: "uptov2-da01d",
+    storageBucket: "uptov2-da01d.firebasestorage.app",
+    messagingSenderId: "742064299083",
+    appId: "1:742064299083:web:ea688d0d0ea318fe7ac1ce",
 };
 
 const PLAYERS_JSON_PATH = "players.json";
