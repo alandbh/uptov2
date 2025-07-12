@@ -18,8 +18,11 @@ const PLAYERS_JSON_PATH = "players.json";
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
+// const provider = new firebase.auth.GoogleAuthProvider();
+// provider.addScope("https://www.googleapis.com/auth/drive.file");
+
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope("https://www.googleapis.com/auth/drive.file");
+provider.addScope("https://www.googleapis.com/auth/drive"); // ← aqui
 
 let accessToken = null;
 let playersData = [];
