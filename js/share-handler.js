@@ -12,11 +12,8 @@ const PLAYERS_JSON_PATH = "players.json";
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-// provider.addScope("https://www.googleapis.com/auth/drive.file");
-
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope("https://www.googleapis.com/auth/drive"); // ← aqui
+provider.addScope("https://www.googleapis.com/auth/drive");
 
 let accessToken = null;
 let playersData = [];
@@ -30,8 +27,25 @@ const progressContainer = document.getElementById("progressContainer");
 const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
 
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+}
+
+async function countFilesInFolder(folderId) {
+    const res = await fetch(
+        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
+        {
+            headers: { Authorization: `Bearer ${accessToken}` },
+        }
+    );
+    const json = await res.json();
+    return json.files?.length || 0;
+}
+
 window.addEventListener("DOMContentLoaded", async () => {
-    const formData = new FormData();
     const body = await new Response(
         location.search === "" ? window.__shareFile : null
     ).formData();
@@ -86,15 +100,26 @@ playerSelect.addEventListener("change", () => {
     }
 });
 
-uploadBtn.addEventListener("click", () => {
-    if (!receivedFile || !accessToken || !journeySelect.value) {
+uploadBtn.addEventListener("click", async () => {
+    const journeyId = journeySelect.value;
+    const player = playersData.find((p) => p.id === playerSelect.value);
+    const journey = player?.subfolders.find((j) => j.id === journeyId);
+
+    if (!receivedFile || !accessToken || !journeyId || !player || !journey) {
         alert("Missing file, token or journey selection");
         return;
     }
 
+    const ext = receivedFile.name.split(".").pop();
+    const prefix = receivedFile.type.startsWith("image/") ? "i" : "v";
+    const count = await countFilesInFolder(journeyId);
+    const customName = `${prefix}${count + 1}-${slugify(
+        journey.name
+    )}-${slugify(player.name)}.${ext}`;
+
     const metadata = {
-        name: receivedFile.name,
-        parents: [journeySelect.value],
+        name: customName,
+        parents: [journeyId],
     };
 
     const form = new FormData();
@@ -124,7 +149,14 @@ uploadBtn.addEventListener("click", () => {
     xhr.onload = () => {
         if (xhr.status < 300) {
             const response = JSON.parse(xhr.responseText);
-            log.textContent = `✅ Uploaded: ${response.name}\nURL: ${response.webViewLink}`;
+            log.innerHTML = `
+          <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
+          <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
+        `;
+            document.getElementById("copyBtn").addEventListener("click", () => {
+                navigator.clipboard.writeText(response.name);
+                document.getElementById("copyBtn").textContent = "Copied!";
+            });
         } else {
             log.textContent = `❌ Upload failed (${xhr.status}): ${xhr.statusText}`;
         }
