@@ -13,7 +13,8 @@ const PLAYERS_JSON_PATH = "players.json";
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope("https://www.googleapis.com/auth/drive");
+// provider.addScope("https://www.googleapis.com/auth/drive");
+provider.addScope("https://www.googleapis.com/auth/drive.file");
 
 let accessToken = null;
 let playersData = [];
@@ -46,6 +47,24 @@ async function countFilesInFolder(folderId) {
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            user.getIdToken().then((token) => {
+                accessToken = token;
+                uploadBtn.disabled = false;
+                loadPlayers();
+            });
+        }
+    });
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            user.getIdToken().then((token) => {
+                accessToken = token;
+                uploadBtn.disabled = false;
+                loadPlayers();
+            });
+        }
+    });
     const body = await new Response(
         location.search === "" ? window.__shareFile : null
     ).formData();

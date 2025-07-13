@@ -1,10 +1,3 @@
-// Firebase configuration (substitua com a sua)
-// const firebaseConfig = {
-//     apiKey: "YOUR_API_KEY",
-//     authDomain: "YOUR_PROJECT.firebaseapp.com",
-//     projectId: "YOUR_PROJECT_ID",
-//     appId: "YOUR_APP_ID",
-// };
 const firebaseConfig = {
     apiKey: "AIzaSyCOl1-8HoQQMB5fQdsJrfSwvR9qOlWeTkc",
     authDomain: "uptov2-da01d.firebaseapp.com",
@@ -18,11 +11,9 @@ const PLAYERS_JSON_PATH = "players.json";
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-// const provider = new firebase.auth.GoogleAuthProvider();
-// provider.addScope("https://www.googleapis.com/auth/drive.file");
-
 const provider = new firebase.auth.GoogleAuthProvider();
-provider.addScope("https://www.googleapis.com/auth/drive"); // ← aqui
+// provider.addScope("https://www.googleapis.com/auth/drive");
+provider.addScope("https://www.googleapis.com/auth/drive.file");
 
 let accessToken = null;
 let playersData = [];
@@ -35,6 +26,21 @@ const fileInput = document.getElementById("fileInput");
 const progressContainer = document.getElementById("progressContainer");
 const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
+
+auth.onAuthStateChanged((user) => {
+    uploadBtn.disabled = true;
+    uploadBtn.disabled = true;
+    if (user) {
+        user.getIdToken().then((token) => {
+            accessToken = token;
+            uploadBtn.disabled = false;
+            loginBtn.textContent = `Logged in as ${user.displayName}`;
+            loginBtn.classList.add("bg-gray-400", "cursor-default");
+            loginBtn.disabled = true;
+            loadPlayers();
+        });
+    }
+});
 
 loginBtn.addEventListener("click", async () => {
     try {
@@ -88,17 +94,6 @@ function slugify(text) {
         .replace(/(^-|-$)/g, "");
 }
 
-// async function countFilesInFolder(folderId) {
-//     const res = await fetch(
-//         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)&key=${firebaseConfig.apiKey}`,
-//         {
-//             headers: { Authorization: `Bearer ${accessToken}` },
-//         }
-//     );
-//     const json = await res.json();
-//     return json.files?.length || 0;
-// }
-
 async function countFilesInFolder(folderId) {
     const res = await fetch(
         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
@@ -129,7 +124,6 @@ uploadBtn.addEventListener("click", async () => {
     )}-${slugify(player.name)}.${ext}`;
 
     const metadata = {
-        // name: file.name,
         name: customName,
         parents: [journeyId],
     };
@@ -163,9 +157,9 @@ uploadBtn.addEventListener("click", async () => {
             if (xhr.status < 300) {
                 const response = JSON.parse(xhr.responseText);
                 log.innerHTML = `
-                            <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
-                            <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
-                            `;
+                    <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
+                    <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
+                `;
                 document
                     .getElementById("copyBtn")
                     .addEventListener("click", () => {
