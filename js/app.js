@@ -88,9 +88,20 @@ function slugify(text) {
         .replace(/(^-|-$)/g, "");
 }
 
+// async function countFilesInFolder(folderId) {
+//     const res = await fetch(
+//         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)&key=${firebaseConfig.apiKey}`,
+//         {
+//             headers: { Authorization: `Bearer ${accessToken}` },
+//         }
+//     );
+//     const json = await res.json();
+//     return json.files?.length || 0;
+// }
+
 async function countFilesInFolder(folderId) {
     const res = await fetch(
-        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)&key=${firebaseConfig.apiKey}`,
+        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
         {
             headers: { Authorization: `Bearer ${accessToken}` },
         }
