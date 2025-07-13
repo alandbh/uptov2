@@ -81,16 +81,45 @@ playerSelect.addEventListener("change", () => {
     }
 });
 
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+}
+
+async function countFilesInFolder(folderId) {
+    const res = await fetch(
+        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)&key=${firebaseConfig.apiKey}`,
+        {
+            headers: { Authorization: `Bearer ${accessToken}` },
+        }
+    );
+    const json = await res.json();
+    return json.files?.length || 0;
+}
+
 uploadBtn.addEventListener("click", async () => {
     const file = fileInput.files[0];
     const journeyId = journeySelect.value;
+    const player = playersData.find((p) => p.id === playerSelect.value);
+    const journey = player?.subfolders.find((j) => j.id === journeyId);
+
     if (!file || !accessToken || !journeyId) {
         alert("Please login, choose a player/journey, and select a file.");
         return;
     }
 
+    const ext = file.name.split(".").pop();
+    const prefix = file.type.startsWith("image/") ? "i" : "v";
+    const count = await countFilesInFolder(journeyId);
+    const customName = `${prefix}${count + 1}-${slugify(
+        journey.name
+    )}-${slugify(player.name)}.${ext}`;
+
     const metadata = {
-        name: file.name,
+        // name: file.name,
+        name: customName,
         parents: [journeyId],
     };
 
@@ -122,7 +151,17 @@ uploadBtn.addEventListener("click", async () => {
         xhr.onload = () => {
             if (xhr.status < 300) {
                 const response = JSON.parse(xhr.responseText);
-                log.textContent = `✅ Uploaded: ${response.name}\nURL: ${response.webViewLink}`;
+                log.innerHTML = `
+                            <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
+                            <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
+                            `;
+                document
+                    .getElementById("copyBtn")
+                    .addEventListener("click", () => {
+                        navigator.clipboard.writeText(response.name);
+                        document.getElementById("copyBtn").textContent =
+                            "Copied!";
+                    });
             } else {
                 log.textContent = `❌ Upload failed (${xhr.status}): ${xhr.statusText}`;
             }
