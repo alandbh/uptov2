@@ -35,15 +35,23 @@ function slugify(text) {
         .replace(/(^-|-$)/g, "");
 }
 
+// async function countFilesInFolder(folderId) {
+//     const res = await fetch(
+//         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
+//         {
+//             headers: { Authorization: `Bearer ${accessToken}` },
+//         }
+//     );
+//     const json = await res.json();
+//     return json.files?.length || 0;
+// }
+
 async function countFilesInFolder(folderId) {
     const res = await fetch(
-        `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
-        {
-            headers: { Authorization: `Bearer ${accessToken}` },
-        }
+        `https://alanvasconcelos.net/uptodrive/?list=files&folder=${folderId}`
     );
-    const json = await res.json();
-    return json.files?.length || 0;
+    const files = await res.json();
+    return files.length || 0;
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
