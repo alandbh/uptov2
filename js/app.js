@@ -1,8 +1,9 @@
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCOl1-8HoQQMB5fQdsJrfSwvR9qOlWeTkc",
     authDomain: "uptov2-da01d.firebaseapp.com",
     projectId: "uptov2-da01d",
-    storageBucket: "uptov2-da01d.firebasestorage.app",
+    storageBucket: "uptov2-da01d.appspot.com",
     messagingSenderId: "742064299083",
     appId: "1:742064299083:web:ea688d0d0ea318fe7ac1ce",
 };
@@ -12,12 +13,16 @@ const PLAYERS_JSON_PATH = "players.json";
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-// provider.addScope("https://www.googleapis.com/auth/drive");
 provider.addScope("https://www.googleapis.com/auth/drive.file");
 
 let accessToken = null;
 let playersData = [];
 
+const loginSection = document.getElementById("loginSection");
+const appSection = document.getElementById("appSection");
+const avatarBtn = document.getElementById("avatarBtn");
+const logoutPopover = document.getElementById("logoutPopover");
+const logoutBtn = document.getElementById("logoutBtn");
 const loginBtn = document.getElementById("loginBtn");
 const uploadBtn = document.getElementById("uploadBtn");
 const playerSelect = document.getElementById("playerSelect");
@@ -26,33 +31,74 @@ const fileInput = document.getElementById("fileInput");
 const progressContainer = document.getElementById("progressContainer");
 const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
+const loadingOverlay = document.getElementById("loadingOverlay");
 
-auth.onAuthStateChanged((user) => {
-    uploadBtn.disabled = true;
-    uploadBtn.disabled = true;
-    if (user) {
-        user.getIdToken().then((token) => {
-            accessToken = token;
-            uploadBtn.disabled = false;
-            loginBtn.textContent = `Logged in as ${user.displayName}`;
-            loginBtn.classList.add("bg-gray-400", "cursor-default");
-            loginBtn.disabled = true;
-            loadPlayers();
-        });
+function toggleLoading(show) {
+    if (!loadingOverlay) return;
+    if (show) {
+        loadingOverlay.classList.remove("hidden");
+    } else {
+        loadingOverlay.classList.add("hidden");
     }
+}
+
+function fadeTransition(showAppView) {
+    const fadeOut = showAppView ? loginSection : appSection;
+    const fadeIn = showAppView ? appSection : loginSection;
+
+    fadeOut.classList.add("opacity-0");
+    setTimeout(() => {
+        fadeOut.classList.add("hidden");
+        fadeIn.classList.remove("hidden");
+        fadeIn.classList.add("opacity-0");
+        setTimeout(() => {
+            fadeIn.classList.remove("opacity-0");
+        }, 10);
+    }, 300);
+}
+
+auth.onAuthStateChanged(async (user) => {
+    toggleLoading(true);
+    if (user) {
+        accessToken = (await user.getIdTokenResult()).token;
+        showApp(user);
+        loadPlayers();
+    } else {
+        showLogin();
+    }
+    toggleLoading(false);
+});
+
+function showApp(user) {
+    fadeTransition(true);
+    avatarBtn.innerHTML = `<img src="${user.photoURL}" class="h-8 w-8 rounded-full" />`;
+    uploadBtn.disabled = false;
+}
+
+function showLogin() {
+    fadeTransition(false);
+    uploadBtn.disabled = true;
+}
+
+avatarBtn.addEventListener("click", () => {
+    logoutPopover.classList.toggle("hidden");
+});
+
+logoutBtn.addEventListener("click", () => {
+    auth.signOut();
 });
 
 loginBtn.addEventListener("click", async () => {
     try {
+        toggleLoading(true);
         const result = await auth.signInWithPopup(provider);
         accessToken = result.credential.accessToken;
-        uploadBtn.disabled = false;
-        loginBtn.textContent = `Logged in as ${result.user.displayName}`;
-        loginBtn.classList.add("bg-gray-400", "cursor-default");
-        loginBtn.disabled = true;
+        showApp(result.user);
         loadPlayers();
     } catch (err) {
         log.textContent = "Login failed: " + err.message;
+    } finally {
+        toggleLoading(false);
     }
 });
 
@@ -93,17 +139,6 @@ function slugify(text) {
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/(^-|-$)/g, "");
 }
-
-// async function countFilesInFolder(folderId) {
-//     const res = await fetch(
-//         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
-//         {
-//             headers: { Authorization: `Bearer ${accessToken}` },
-//         }
-//     );
-//     const json = await res.json();
-//     return json.files?.length || 0;
-// }
 
 async function countFilesInFolder(folderId) {
     const res = await fetch(
@@ -165,9 +200,9 @@ uploadBtn.addEventListener("click", async () => {
             if (xhr.status < 300) {
                 const response = JSON.parse(xhr.responseText);
                 log.innerHTML = `
-                    <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
-                    <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
-                `;
+            <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
+            <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
+          `;
                 document
                     .getElementById("copyBtn")
                     .addEventListener("click", () => {
