@@ -15,8 +15,9 @@ const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 provider.addScope("https://www.googleapis.com/auth/drive.file");
 
-let accessToken = null;
+let accessToken = sessionStorage.getItem("driveAccessToken") || null;
 let playersData = [];
+let isLoggingIn = false;
 
 const loginSection = document.getElementById("loginSection");
 const appSection = document.getElementById("appSection");
@@ -60,10 +61,18 @@ function fadeTransition(showAppView) {
 auth.onAuthStateChanged(async (user) => {
     toggleLoading(true);
     if (user) {
-        accessToken = (await user.getIdTokenResult()).token;
+        accessToken = sessionStorage.getItem("driveAccessToken");
+        if (!accessToken) {
+            // log.textContent = "Session expired. Please login again.";
+            showLogin();
+            toggleLoading(false);
+            return;
+        }
         showApp(user);
         loadPlayers();
     } else {
+        accessToken = null;
+        sessionStorage.removeItem("driveAccessToken");
         showLogin();
     }
     toggleLoading(false);
@@ -89,16 +98,20 @@ logoutBtn.addEventListener("click", () => {
 });
 
 loginBtn.addEventListener("click", async () => {
+    if (isLoggingIn) return;
+    isLoggingIn = true;
     try {
         toggleLoading(true);
         const result = await auth.signInWithPopup(provider);
         accessToken = result.credential.accessToken;
+        sessionStorage.setItem("driveAccessToken", accessToken);
         showApp(result.user);
         loadPlayers();
     } catch (err) {
         log.textContent = "Login failed: " + err.message;
     } finally {
         toggleLoading(false);
+        isLoggingIn = false;
     }
 });
 

@@ -1,9 +1,9 @@
-// Firebase config (same as app.js)
+// Firebase configuration
 const firebaseConfig = {
     apiKey: "AIzaSyCOl1-8HoQQMB5fQdsJrfSwvR9qOlWeTkc",
     authDomain: "uptov2-da01d.firebaseapp.com",
     projectId: "uptov2-da01d",
-    storageBucket: "uptov2-da01d.firebasestorage.app",
+    storageBucket: "uptov2-da01d.appspot.com",
     messagingSenderId: "742064299083",
     appId: "1:742064299083:web:ea688d0d0ea318fe7ac1ce",
 };
@@ -13,10 +13,9 @@ const PLAYERS_JSON_PATH = "players.json";
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
-// provider.addScope("https://www.googleapis.com/auth/drive");
 provider.addScope("https://www.googleapis.com/auth/drive.file");
 
-let accessToken = null;
+let accessToken = sessionStorage.getItem("driveAccessToken") || null;
 let playersData = [];
 let receivedFile = null;
 
@@ -28,51 +27,7 @@ const progressContainer = document.getElementById("progressContainer");
 const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
 
-function slugify(text) {
-    return text
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "");
-}
-
-// async function countFilesInFolder(folderId) {
-//     const res = await fetch(
-//         `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&fields=files(id)`,
-//         {
-//             headers: { Authorization: `Bearer ${accessToken}` },
-//         }
-//     );
-//     const json = await res.json();
-//     return json.files?.length || 0;
-// }
-
-async function countFilesInFolder(folderId) {
-    const res = await fetch(
-        `https://alanvasconcelos.net/uptodrive/?list=files&folder=${folderId}`
-    );
-    const files = await res.json();
-    return files.length || 0;
-}
-
 window.addEventListener("DOMContentLoaded", async () => {
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            user.getIdToken().then((token) => {
-                accessToken = token;
-                uploadBtn.disabled = false;
-                loadPlayers();
-            });
-        }
-    });
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            user.getIdToken().then((token) => {
-                accessToken = token;
-                uploadBtn.disabled = false;
-                loadPlayers();
-            });
-        }
-    });
     const body = await new Response(
         location.search === "" ? window.__shareFile : null
     ).formData();
@@ -90,14 +45,27 @@ window.addEventListener("DOMContentLoaded", async () => {
           )}" class="w-full rounded shadow" />`
         : `<p class='text-sm'>File: ${file.name} (${file.type})</p>`;
 
-    try {
-        const result = await auth.signInWithPopup(provider);
-        accessToken = result.credential.accessToken;
-        uploadBtn.disabled = false;
-        loadPlayers();
-    } catch (err) {
-        log.textContent = "Login failed: " + err.message;
-    }
+    auth.onAuthStateChanged(async (user) => {
+        if (user) {
+            accessToken = sessionStorage.getItem("driveAccessToken");
+            if (!accessToken) {
+                log.textContent = "Session expired. Please login again.";
+                return;
+            }
+            uploadBtn.disabled = false;
+            await loadPlayers();
+        } else {
+            try {
+                const result = await auth.signInWithPopup(provider);
+                accessToken = result.credential.accessToken;
+                sessionStorage.setItem("driveAccessToken", accessToken);
+                uploadBtn.disabled = false;
+                await loadPlayers();
+            } catch (err) {
+                log.textContent = "Login failed: " + err.message;
+            }
+        }
+    });
 });
 
 async function loadPlayers() {
@@ -127,26 +95,41 @@ playerSelect.addEventListener("change", () => {
     }
 });
 
-uploadBtn.addEventListener("click", async () => {
-    const journeyId = journeySelect.value;
-    const player = playersData.find((p) => p.id === playerSelect.value);
-    const journey = player?.subfolders.find((j) => j.id === journeyId);
+function slugify(text) {
+    return text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "");
+}
 
-    if (!receivedFile || !accessToken || !journeyId || !player || !journey) {
+async function countFilesInFolder(folderId) {
+    const res = await fetch(
+        `https://alanvasconcelos.net/uptodrive/?list=files&folder=${folderId}`
+    );
+    const files = await res.json();
+    return files.length || 0;
+}
+
+uploadBtn.addEventListener("click", async () => {
+    if (!receivedFile || !accessToken || !journeySelect.value) {
         alert("Missing file, token or journey selection");
         return;
     }
 
+    const player = playersData.find((p) => p.id === playerSelect.value);
+    const journey = player?.subfolders.find(
+        (j) => j.id === journeySelect.value
+    );
     const ext = receivedFile.name.split(".").pop();
     const prefix = receivedFile.type.startsWith("image/") ? "i" : "v";
-    const count = await countFilesInFolder(journeyId);
+    const count = await countFilesInFolder(journeySelect.value);
     const customName = `${prefix}${count + 1}-${slugify(
         journey.name
     )}-${slugify(player.name)}.${ext}`;
 
     const metadata = {
         name: customName,
-        parents: [journeyId],
+        parents: [journeySelect.value],
     };
 
     const form = new FormData();
