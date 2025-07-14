@@ -34,6 +34,21 @@ const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
 const loadingOverlay = document.getElementById("loadingOverlay");
 
+function toggleEnableUploadButton() {
+    const playerSelected = playerSelect.value !== "";
+    const journeySelected = journeySelect.value !== "";
+    const fileSelected = fileInput.files.length > 0;
+
+    uploadBtn.disabled = !(
+        playerSelected &&
+        journeySelected &&
+        fileSelected &&
+        accessToken
+    );
+}
+
+toggleEnableUploadButton();
+
 function toggleLoading(show) {
     if (!loadingOverlay) return;
     if (show) {
@@ -81,12 +96,13 @@ auth.onAuthStateChanged(async (user) => {
 function showApp(user) {
     fadeTransition(true);
     avatarBtn.innerHTML = `<img src="${user.photoURL}" class="h-8 w-8 rounded-full" />`;
-    uploadBtn.disabled = false;
+    // uploadBtn.disabled = false;
+    toggleEnableUploadButton();
 }
 
 function showLogin() {
     fadeTransition(false);
-    uploadBtn.disabled = true;
+    toggleEnableUploadButton();
 }
 
 avatarBtn.addEventListener("click", () => {
@@ -143,6 +159,7 @@ playerSelect.addEventListener("change", () => {
             journeySelect.appendChild(opt);
         });
         journeySelect.disabled = false;
+        toggleEnableUploadButton();
     }
 });
 
@@ -197,6 +214,11 @@ fileInput.addEventListener("change", () => {
         // Exibir pré-visualização
         previewFile(file);
     }
+    toggleEnableUploadButton();
+});
+
+journeySelect.addEventListener("change", () => {
+    toggleEnableUploadButton();
 });
 
 function previewFile(file) {
@@ -227,6 +249,8 @@ function previewFile(file) {
 }
 
 uploadBtn.addEventListener("click", async () => {
+    progressBar.style.width = `0%`;
+    log.innerHTML = "";
     const file = fileInput.files[0];
     const journeyId = journeySelect.value;
     const player = playersData.find((p) => p.id === playerSelect.value);
