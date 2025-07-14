@@ -161,6 +161,71 @@ async function countFilesInFolder(folderId) {
     return files.length || 0;
 }
 
+const dropZone = document.getElementById("dropZone");
+const fileInfo = document.getElementById("fileInfo");
+
+dropZone.addEventListener("click", () => fileInput.click());
+
+dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.classList.add("dragover");
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("dragover");
+});
+
+dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+
+    const file = e.dataTransfer.files[0];
+    if (file) {
+        // Atualizar o fileInput com o arquivo arrastado
+        const dataTransfer = new DataTransfer();
+        dataTransfer.items.add(file);
+        fileInput.files = dataTransfer.files;
+
+        // Exibir pré-visualização
+        previewFile(file);
+    }
+});
+
+fileInput.addEventListener("change", () => {
+    const file = fileInput.files[0];
+    if (file) {
+        // Exibir pré-visualização
+        previewFile(file);
+    }
+});
+
+function previewFile(file) {
+    // Limpar o conteúdo do dropZone
+    dropZone.innerHTML = "";
+
+    const fileType = file.type;
+    if (fileType.startsWith("image/")) {
+        // Criar elemento de imagem
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(file);
+        img.alt = "Preview";
+        img.style.maxWidth = "100%";
+        img.style.maxHeight = "100%";
+        dropZone.appendChild(img);
+    } else if (fileType.startsWith("video/")) {
+        // Criar elemento de vídeo
+        const video = document.createElement("video");
+        video.src = URL.createObjectURL(file);
+        video.controls = true;
+        video.style.maxWidth = "100%";
+        video.style.maxHeight = "100%";
+        dropZone.appendChild(video);
+    } else {
+        // Caso o arquivo não seja imagem ou vídeo
+        dropZone.textContent = "File type not supported for preview.";
+    }
+}
+
 uploadBtn.addEventListener("click", async () => {
     const file = fileInput.files[0];
     const journeyId = journeySelect.value;
@@ -168,8 +233,9 @@ uploadBtn.addEventListener("click", async () => {
     const journey = player?.subfolders.find((j) => j.id === journeyId);
 
     if (!file || !accessToken || !journeyId) {
-        alert("Please login, choose a player/journey, and select a file.");
-        return;
+        console.log({ file, accessToken, journeyId, player });
+        // alert("Please login, choose a player/journey, and select a file.");
+        // return;
     }
 
     const ext = file.name.split(".").pop();
