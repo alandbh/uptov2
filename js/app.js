@@ -39,12 +39,7 @@ function toggleEnableUploadButton() {
     const journeySelected = journeySelect.value !== "";
     const fileSelected = fileInput.files.length > 0;
 
-    uploadBtn.disabled = !(
-        playerSelected &&
-        journeySelected &&
-        fileSelected &&
-        accessToken
-    );
+    uploadBtn.disabled = !(playerSelected && journeySelected && fileSelected);
 }
 
 toggleEnableUploadButton();
