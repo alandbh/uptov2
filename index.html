@@ -5,6 +5,28 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>UpToDrive</title>
         <link rel="manifest" href="manifest.json" />
+        <script>
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker
+                    .register("/service-worker.js")
+                    .then((registration) => {
+                        console.log(
+                            "Service Worker registrado com sucesso:",
+                            registration.scope
+                        );
+                    })
+                    .catch((error) => {
+                        console.error(
+                            "Falha ao registrar o Service Worker:",
+                            error
+                        );
+                    });
+            } else {
+                console.warn(
+                    "Service Workers não são suportados neste navegador."
+                );
+            }
+        </script>
         <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
         <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-auth-compat.js"></script>
         <script src="https://cdn.tailwindcss.com"></script>
@@ -66,7 +88,7 @@
             <header class="flex justify-between items-center mb-6">
                 <h2 class="text-xl font-semibold">
                     UpToDrive SPLA2
-                    <small class="font-medium text-gray-500">Alfa v2.1j</small>
+                    <small class="font-medium text-gray-500">Alfa v2.1k</small>
                 </h2>
                 <div class="relative">
                     <button id="avatarBtn" class="focus:outline-none">
@@ -167,6 +189,6 @@
             </div>
         </div>
 
-        <script src="/js/app.js?v=2.1j" defer></script>
+        <script src="/js/app.js?v=2.1k" defer></script>
     </body>
 </html>

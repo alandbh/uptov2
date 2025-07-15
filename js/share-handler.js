@@ -28,9 +28,21 @@ const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
 
 window.addEventListener("DOMContentLoaded", async () => {
-    const body = await new Response(
-        location.search === "" ? window.__shareFile : null
-    ).formData();
+    // const body = await new Response(
+    //     location.search === "" ? window.__shareFile : null
+    // ).formData();
+
+    let body;
+    if (location.search === "") {
+        if (window.__shareFile) {
+            const response = new Response(window.__shareFile);
+            body = await response.formData();
+        }
+    } else {
+        const response = new Response(new URLSearchParams(location.search));
+        body = await response.formData();
+    }
+
     const file = body.get("file");
 
     if (!file) {
