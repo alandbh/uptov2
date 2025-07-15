@@ -29,17 +29,43 @@ const uploadBtn = document.getElementById("uploadBtn");
 const playerSelect = document.getElementById("playerSelect");
 const journeySelect = document.getElementById("journeySelect");
 const fileInput = document.getElementById("fileInput");
-const progressContainer = document.getElementById("progressContainer");
+// const progressContainer = document.getElementById("progressContainer");
 const progressBar = document.getElementById("progressBar");
 const log = document.getElementById("log");
 const loadingOverlay = document.getElementById("loadingOverlay");
 
-function toggleEnableUploadButton() {
+async function refreshAccessTokenIfNeeded() {
+    try {
+        const user = firebase.auth().currentUser;
+        if (!user) return;
+
+        const provider = new firebase.auth.GoogleAuthProvider();
+        provider.addScope("https://www.googleapis.com/auth/drive.file");
+
+        const result = await user.reauthenticateWithPopup(provider);
+        accessToken = result.credential.accessToken;
+        console.log("🔄 Access token refreshed.");
+        log.innerHTML = "";
+    } catch (err) {
+        console.error("⚠️ Failed to refresh access token:", err);
+    }
+}
+
+function toggleEnableUploadButton(shoulDisable) {
     const playerSelected = playerSelect.value !== "";
     const journeySelected = journeySelect.value !== "";
     const fileSelected = fileInput.files.length > 0;
 
+    if (shoulDisable) {
+        uploadBtn.disabled = true;
+        uploadBtn.style.background = "";
+        return;
+    }
+
     uploadBtn.disabled = !(playerSelected && journeySelected && fileSelected);
+
+    // uploadBtn.disabled = true;
+    uploadBtn.style.background = "";
 }
 
 toggleEnableUploadButton();
@@ -108,8 +134,13 @@ logoutBtn.addEventListener("click", () => {
     auth.signOut();
 });
 
-loginBtn.addEventListener("click", async () => {
+loginBtn.addEventListener("click", () => {
     if (isLoggingIn) return;
+
+    doTheLogin();
+});
+
+async function doTheLogin() {
     isLoggingIn = true;
     try {
         toggleLoading(true);
@@ -124,7 +155,7 @@ loginBtn.addEventListener("click", async () => {
         toggleLoading(false);
         isLoggingIn = false;
     }
-});
+}
 
 async function loadPlayers() {
     try {
@@ -145,6 +176,7 @@ async function loadPlayers() {
 playerSelect.addEventListener("change", () => {
     journeySelect.innerHTML = '<option value="">Select a journey</option>';
     journeySelect.disabled = true;
+    log.innerHTML = "";
     const player = playersData.find((p) => p.id === playerSelect.value);
     if (player) {
         player.subfolders.forEach((j) => {
@@ -210,10 +242,12 @@ fileInput.addEventListener("change", () => {
         previewFile(file);
     }
     toggleEnableUploadButton();
+    log.innerHTML = "";
 });
 
 journeySelect.addEventListener("change", () => {
     toggleEnableUploadButton();
+    log.innerHTML = "";
 });
 
 function previewFile(file) {
@@ -244,7 +278,8 @@ function previewFile(file) {
 }
 
 uploadBtn.addEventListener("click", async () => {
-    progressBar.style.width = `0%`;
+    // await refreshAccessTokenIfNeeded();
+    // progressBar.style.width = `0%`;
     log.innerHTML = "";
     const file = fileInput.files[0];
     const journeyId = journeySelect.value;
@@ -276,8 +311,9 @@ uploadBtn.addEventListener("click", async () => {
     );
     form.append("file", file);
 
-    progressContainer.classList.remove("hidden");
-    progressBar.style.width = "0%";
+    // progressContainer.classList.remove("hidden");
+    // progressBar.style.width = "0%";
+    uploadBtn.style.background = "";
 
     try {
         const xhr = new XMLHttpRequest();
@@ -290,7 +326,8 @@ uploadBtn.addEventListener("click", async () => {
         xhr.upload.onprogress = (e) => {
             if (e.lengthComputable) {
                 const percent = (e.loaded / e.total) * 100;
-                progressBar.style.width = `${percent}%`;
+                // progressBar.style.width = `${percent}%`;
+                uploadBtn.style.background = `linear-gradient(90deg,rgba(179, 0, 0, 1) 0%, rgba(179, 0, 0, 1) ${percent}%, rgba(255, 0, 0, 1) 0%)`;
             }
         };
 
@@ -301,6 +338,9 @@ uploadBtn.addEventListener("click", async () => {
             <p class="mb-2">✅ <strong>${response.name}</strong> uploaded successfully.</p>
             <button id="copyBtn" class="bg-gray-200 text-sm px-3 py-1 rounded hover:bg-gray-300">Copy to clipboard</button>
           `;
+
+                toggleEnableUploadButton(true);
+
                 document
                     .getElementById("copyBtn")
                     .addEventListener("click", () => {
@@ -310,6 +350,14 @@ uploadBtn.addEventListener("click", async () => {
                     });
             } else {
                 log.textContent = `❌ Upload failed (${xhr.status}): ${xhr.statusText}`;
+                console.log(JSON.parse(xhr.responseText).error.status);
+
+                if (
+                    JSON.parse(xhr.responseText).error.status ===
+                    "UNAUTHENTICATED"
+                ) {
+                    refreshAccessTokenIfNeeded();
+                }
             }
         };
 
