@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", async () => {
             const response = new Response(window.__shareFile);
             body = await response.formData();
         } else {
-            log.textContent = "No file received via share target.";
+            log.textContent = "No file 1 received via share target.";
             return;
         }
     } else {
@@ -56,7 +56,7 @@ window.addEventListener("DOMContentLoaded", async () => {
     const file = body.get("file");
 
     if (!file) {
-        log.textContent = "No file received via share target.";
+        log.textContent = "No file 2 received via share target.";
         return;
     }
 
