@@ -190,6 +190,11 @@ playerSelect.addEventListener("change", () => {
     }
 });
 
+journeySelect.addEventListener("change", () => {
+    toggleEnableUploadButton();
+    log.innerHTML = "";
+});
+
 function slugify(text) {
     return text
         .toLowerCase()
@@ -245,11 +250,6 @@ fileInput.addEventListener("change", () => {
     log.innerHTML = "";
 });
 
-journeySelect.addEventListener("change", () => {
-    toggleEnableUploadButton();
-    log.innerHTML = "";
-});
-
 function previewFile(file) {
     // Limpar o conteúdo do dropZone
     dropZone.innerHTML = "";
@@ -276,6 +276,26 @@ function previewFile(file) {
         dropZone.textContent = "File type not supported for preview.";
     }
 }
+
+document.addEventListener("paste", (e) => {
+    const items = e.clipboardData.items;
+
+    for (const item of items) {
+        if (item.type.startsWith("image/")) {
+            const file = item.getAsFile();
+
+            if (file) {
+                // Atualizar o fileInput com o arquivo colado
+                const dataTransfer = new DataTransfer();
+                dataTransfer.items.add(file);
+                fileInput.files = dataTransfer.files;
+
+                // Exibir pré-visualização
+                previewFile(file);
+            }
+        }
+    }
+});
 
 uploadBtn.addEventListener("click", async () => {
     // await refreshAccessTokenIfNeeded();
