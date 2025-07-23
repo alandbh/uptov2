@@ -160,7 +160,13 @@ async function doTheLogin() {
 async function loadPlayers() {
     try {
         const response = await fetch(PLAYERS_JSON_PATH);
-        playersData = await response.json();
+        const unsortedPlayersData = await response.json();
+
+        // Let's sort the array unsortedPlayersData alphabetically
+
+        playersData = unsortedPlayersData.sort((a, b) => {
+            return a.name.localeCompare(b.name);
+        });
 
         playersData.forEach((player) => {
             const opt = document.createElement("option");
