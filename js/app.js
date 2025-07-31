@@ -8,7 +8,7 @@ const firebaseConfig = {
     appId: "1:742064299083:web:ea688d0d0ea318fe7ac1ce",
 };
 
-const PLAYERS_JSON_PATH = "players.json";
+const PLAYERS_JSON_PATH = "players.json?v=2.1q";
 
 firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
