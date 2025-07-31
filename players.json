@@ -1,104 +1,19 @@
 [
     {
-        "name": "farmatodo",
-        "id": "1p5ptuzBKuYw1WPAJ_rPgKZngDCcM-NJr",
-        "type": "player",
-        "subfolders": [
-            {
-                "id": "1Jdj52-MAGc_Eucmv6lRMVU0PXWy4eQmH",
-                "name": "mobile-app",
-                "type": "journey"
-            },
-            {
-                "id": "1S0kz3JJmgahNXC4KcXDnzhisMW1SIRlo",
-                "name": "mobile-site",
-                "type": "journey"
-            },
-            {
-                "id": "1T_W-fmm6Ufi0LL9-leoJL2xTRsNs8XJ1",
-                "name": "chatbot",
-                "type": "journey"
-            }
-        ]
-    },
-    {
-        "name": "easy",
-        "id": "1_8oD9c35eFY6E6xGWy9dCfGANCoJPS0P",
-        "type": "player",
-        "subfolders": [
-            {
-                "id": "13UcKshHC8dI2nUXAXY2LVRDQ17EGCu4U",
-                "name": "chatbot",
-                "type": "journey"
-            },
-            {
-                "id": "1a2XiuUsBEdv65jh_5GzV6vErglNiL5uD",
-                "name": "mobile-app",
-                "type": "journey"
-            },
-            {
-                "id": "1dZCGQH6txZFb_wzvBzIvKzU_3KZNyJct",
-                "name": "mobile-site",
-                "type": "journey"
-            }
-        ]
-    },
-    {
-        "name": "zz_BKP",
-        "id": "1l7Sn01xQF4WzM9ddiQgmlCVph1Ef_O-2",
-        "type": "player",
-        "subfolders": [
-            {
-                "id": "1u2w3VpsUGeTDagii_abxU_xCIuSJPw0Z",
-                "name": "na",
-                "type": "journey"
-            }
-        ]
-    },
-    {
-        "name": "zz_Temp",
-        "id": "1xs15GwSlQv03HumYNBtuC8ZTAZjL2ASw",
-        "type": "player",
-        "subfolders": [
-            {
-                "id": "1qbv_eQchHPxg03vPBnlu7NXGx0SKyeOh",
-                "name": "na",
-                "type": "journey"
-            },
-            {
-                "id": "1UUcWBgr6pQtZ3UX7DEWx6eC5isE3T-Pf",
-                "name": "Nf",
-                "type": "journey"
-            }
-        ]
-    },
-    {
-        "name": "exito",
-        "id": "1r-1B47keUEi3GClcmJYmlsCcahH4W2UN",
-        "type": "player",
-        "subfolders": [
-            {
-                "id": "1qwNXtbGUgIu_46eXKeL2JnXUqdjUiT32",
-                "name": "chatbot",
-                "type": "journey"
-            },
-            {
-                "id": "1JKNRL-N-ZStUUotxlVBSWk5km-HWa6WK",
-                "name": "mobile-app",
-                "type": "journey"
-            },
-            {
-                "id": "1yDSOSrCLxpHr7vGc5dJgW4KdeYSWnY0I",
-                "name": "mobile-site",
-                "type": "journey"
-            }
-        ]
-    },
-    {
         "name": "walmart-mexico",
         "id": "1wuu9PSqhVGpAevJVq2tes8nODCWtenF2",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1pqLJY2sJln_QpmZRy4-mxY7pLd3ZjGba",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "13f0iC8S2N2fz2JzH_Bs6HHX1d5NFevYM",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1dKH284ob2cxcGMUFOy6CaUBQVlqXPMsj",
                 "name": "chatbot",
@@ -122,6 +37,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "18SG7TLOrfBkhEsgq43GhmVGjuYzG4_FQ",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "163lEusWD1igrsn4lxRKRBqGIbxi9VZbm",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1CiMmCdAp-dGy-CimA3gnXAtNd2gFfdSY",
                 "name": "chatbot",
                 "type": "journey"
@@ -143,6 +68,16 @@
         "id": "17S5-qhp8aKIDq7Y73pZlQ9VUbAIZ02d6",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1TfQ3JDsbmuO28JWww25ngsLmKuSWVbJV",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1uJ_k0t7xegLiCKTvxIiq_47PME7r-p17",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1KPGgAQ1Cu_7i87CLW5SBpU9QD4FR6jm2",
                 "name": "chatbot",
@@ -166,6 +101,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1CJa3e3Tqf5F-s2-C58T1a9KrWlyV7wj-",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1m2mIyp5Y_XrVZqUbeNWpRglvVw_f3utx",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1NkeXFbx9K3esR8wkMEyj6o1fxe8k2OqS",
                 "name": "chatbot",
                 "type": "journey"
@@ -187,6 +132,16 @@
         "id": "1H7dPKdsxSLIPUOXe2iXtq8Ut8-0Sw4j8",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1v6WLDNzfvQZMQjFqH7EjNZfcUw6qQDE6",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1pRzD834g14FXUUXeob5r0F2FIflos_cf",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "13rWzRWea8kXsroqmw2eS4uX7QTYXIkhm",
                 "name": "chatbot",
@@ -210,6 +165,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1yLN8CutbnmLW3v4oUaX2kuAeK0sILvU0",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1MmrV9nLuhhp_-mna2lWZAJsBYmweX_tf",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "13eITVuKFQEAuajqUa-UGPIGPgIlAJ9_M",
                 "name": "chatbot",
                 "type": "journey"
@@ -231,6 +196,16 @@
         "id": "1G-gEljPWsqNXDoYT4q2_EGKPivYyVxCW",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1582yyfWbRLSVrqNhi5wZMHNKJOPgE5XJ",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1fjXGEym2alr9iBtzpfvxTSOK2EfD0EYA",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "14cUHcPY46cjp1P_fkd9Ey0-d2oYYcvd3",
                 "name": "chatbot",
@@ -254,6 +229,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1syJcEkkZwIOzEn1LEF9OF6WB-aJM4cIO",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1t9L3MdHuTl_uvDimfJ9AEp52aNQIM2oH",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1N2GxVn_Ro_HO2o1kBzY2voTUomuBWzEl",
                 "name": "chatbot",
                 "type": "journey"
@@ -275,6 +260,16 @@
         "id": "1MQBB8JW3AcESI-gsB2NgBHgqLAUmnxXA",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1veCrwNj1SY6cYRcPj_x8kylu9ej3kywj",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1twf6Wzp_vLNPhlqYgWtSOQCAaJTXLVq-",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1P8kVJoxPU9XxmQw8I3eVQg9J1FkBqY4V",
                 "name": "mobile-site",
@@ -298,6 +293,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1k2iumME8dQZNeElvqoxnZQNVdgLN-wzA",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "18ahMv6_16i6etO1m87OCCsknVroW11QD",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1u0U6gAMpTKUKQAM8UBSVeh5ikd8ZZXbN",
                 "name": "chatbot",
                 "type": "journey"
@@ -319,6 +324,16 @@
         "id": "1b5AnyU8-_XlP2pDupj3UBd-BnzdZok53",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1rs6kCBXNUgSXZIkgeWGZG0E4_GiWPQ6_",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1st0nWm2C5_2rqjV4o8HwbHSjDt_nk49A",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1Y1P9gcKrUkSAXJLZKV0VTu4RS6RV1weC",
                 "name": "chatbot",
@@ -342,6 +357,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "15-Zg0aFMttz1uD0ICawpwPui3Kv_VFd0",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1CVEnRwaC7Lc1XdGV4Cxk_EEzimk2Zazx",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1AWApy2uKiNSZt2ioVzM2ooXYk77g9TjH",
                 "name": "chatbot",
                 "type": "journey"
@@ -363,6 +388,16 @@
         "id": "16N3MH6iAS8l8yN3GDzQsE2YQ5s3Av8oi",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1sh5h-R8peA5YCNOu4yRyFaSgPLq5oIkV",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1zFHutkuLkavqeksljuombh7Uc5TrYL8U",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1R7WoMZne5mEZ1Ce-Akq7SkNvs7uPTqyd",
                 "name": "chatbot",
@@ -386,6 +421,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "104acBu_5AYIDgNqNrU3zmA5MCT0GvbI_",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Rn-ptUPeV4HJqg7jA8WgBwp1E0tBzJqq",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1ZDkkpne7x9Yi-3ikBMokuk3-WWYYpF5h",
                 "name": "chatbot",
                 "type": "journey"
@@ -408,6 +453,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1KnH3Jc34lbCdKk2ztz2lopGOnJRN8h5S",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "109ViQ9dVGHIzeXdsX42jD-w1HGI4NsXj",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1R02NONcgguMAjfBHH_pu2BUVKQD6TonU",
                 "name": "chatbot",
                 "type": "journey"
@@ -425,10 +480,52 @@
         ]
     },
     {
+        "name": "farmatodo",
+        "id": "1p5ptuzBKuYw1WPAJ_rPgKZngDCcM-NJr",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1iLwFyyj6sfNeI--ia9XoykRBo76y-_F2",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1djIgl6xU_yjO-FfzdkFi9JHWmIMns23c",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Jdj52-MAGc_Eucmv6lRMVU0PXWy4eQmH",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1S0kz3JJmgahNXC4KcXDnzhisMW1SIRlo",
+                "name": "mobile-site",
+                "type": "journey"
+            },
+            {
+                "id": "1T_W-fmm6Ufi0LL9-leoJL2xTRsNs8XJ1",
+                "name": "chatbot",
+                "type": "journey"
+            }
+        ]
+    },
+    {
         "name": "farmacias-san-pablo",
         "id": "1dQtmXdAZ_DeHAyJo2d-larN20CHYmC-b",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1Ix3kIfAi8Ww0l99N8Os12reTN6RXKd6E",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1ebF6_Af2ii41z2yiDHLlNtuQ-WRx-iNF",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1e1elNOqjfSahEu6mP9fGykWd0sfo0W-O",
                 "name": "chatbot",
@@ -452,6 +549,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1EAOj7mCkTl-rkNnN1xtVYas_Tpte9JLH",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Ars6-_BmsPe70l5uNuXr5tS7Zw40BC5q",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1BNpgVKsHeaPXL8lcLgfhVqHvOPp6Id7K",
                 "name": "chatbot",
                 "type": "journey"
@@ -473,6 +580,16 @@
         "id": "11_ZgEFURwGDV1DYrFnQPqpi-rkdvxes0",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1dB0V5JquLska-kHihwMk1T7SvcVYqXPF",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1NAuarA5OYj02GW2_NcG_FgsOCeRKsfQS",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1yn1la0-FGNL_fRhHzd4W-XvG2av72RuK",
                 "name": "chatbot",
@@ -496,6 +613,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1crzLSBhwXBkFvKjKeJDCq0HJlmcURU0d",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1qcufs_1aPFGHt3ChD7d9mhp9pawvigui",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1AVI0MX068zMce7V5adfFNtplUtYMRgua",
                 "name": "chatbot",
                 "type": "journey"
@@ -513,10 +640,52 @@
         ]
     },
     {
+        "name": "exito",
+        "id": "1r-1B47keUEi3GClcmJYmlsCcahH4W2UN",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1VDV6bMBg9Y3t6OI0qX9CikXt5wPMgzTa",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1lhDb0MTXup08FUZbMvg_4NyUsQZniETz",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1qwNXtbGUgIu_46eXKeL2JnXUqdjUiT32",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1JKNRL-N-ZStUUotxlVBSWk5km-HWa6WK",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1yDSOSrCLxpHr7vGc5dJgW4KdeYSWnY0I",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
         "name": "elektra",
         "id": "16fw7NJbhkSsXuxuQNFsEgKT5bpHcC7IS",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1SiyhzlaOSIkMrDBJk2C0AdYxHsvXiHtM",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1PCxT05UahYul5woBnTUCORfa5bUT9uOM",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "19EiUwnBUzSHVWjLzPdnudk5_91Ap1lYi",
                 "name": "chatbot",
@@ -540,6 +709,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1uLYYWd3VL2vsFAC6CHUxGbsVt-3H-yBt",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1SJzYRjyRDSGitosVI9KSA4NwbnFbC0q9",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1f6UpjBtZmRyO_Bd_frsfM0FWghx1Ox_o",
                 "name": "chatbot",
                 "type": "journey"
@@ -557,10 +736,52 @@
         ]
     },
     {
+        "name": "easy",
+        "id": "1_8oD9c35eFY6E6xGWy9dCfGANCoJPS0P",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1LJxGEUSp_H1GeNv-1FWCfAOXrVnxHWz-",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1jP4VvPRtIBvfIRDdmWmpmSpphD0gaOfq",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "13UcKshHC8dI2nUXAXY2LVRDQ17EGCu4U",
+                "name": "chatbot",
+                "type": "journey"
+            },
+            {
+                "id": "1a2XiuUsBEdv65jh_5GzV6vErglNiL5uD",
+                "name": "mobile-app",
+                "type": "journey"
+            },
+            {
+                "id": "1dZCGQH6txZFb_wzvBzIvKzU_3KZNyJct",
+                "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
         "name": "cruz-verde",
         "id": "1ZMLI6gZlu63zqO3bhqenLBhdeZIa5duP",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1gQc37Njyai2vh94qkJayO2XKLyzba82a",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1tDmfcWarqHUsdPZL43WkSieTj9D-BB4Z",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "1VX1P7tGBlAlh-IJBIHjodSHFxrao0PS8",
                 "name": "chatbot",
@@ -584,6 +805,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1FJvBIpHdHIewx3-nqlXU3Euh6MW4R70u",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Fwxw7Pg3lUQrhp-grzzdIpGltsNAcbJ1",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1UeXkoaG6QCcWiN1KBWvo6R-KS2Pef2IA",
                 "name": "chatbot",
                 "type": "journey"
@@ -605,6 +836,16 @@
         "id": "15hqBGEcdCnZFVeMA5pwmRL8RsIOZJRHG",
         "type": "player",
         "subfolders": [
+            {
+                "id": "1OngO186gSim5aquMd1qh0UmDASZ-aKSB",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1G3UB4-nud-RQTT0LLmSPWFKWKG0P3_2C",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "17M30M1OZV8-rTpSaSGYqwjnrIS27pdpE",
                 "name": "chatbot",
@@ -628,6 +869,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "19-J7typX71TXHlGOswuk7U5pn6dvnRqL",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Jloy9vqzD7XyZfin3kEzILw-1eTcbI8u",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1x-RdjA2yiokA6EpKqkeJLF_K8JWnJ2Hr",
                 "name": "chatbot",
                 "type": "journey"
@@ -649,6 +900,16 @@
         "id": "1qWdFvF299MzuEQ6hb0G7Upl-9Hj3tWfK",
         "type": "player",
         "subfolders": [
+            {
+                "id": "18wK4A7mxuW3lOuHuHsD8-DBYX7PTz1xV",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1Kca9GY8dh64JMQpAbPVX2KqQprNp5kzI",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
             {
                 "id": "11UQ3KLSy40722MCZ6a1RFGw4KS1tQUam",
                 "name": "chatbot",
@@ -672,6 +933,16 @@
         "type": "player",
         "subfolders": [
             {
+                "id": "1xuZMsryGs9xTIeg62zx113xxhvMjcEzZ",
+                "name": "vSite FEATURE",
+                "type": "journey"
+            },
+            {
+                "id": "1XK6ibyR_XqrqCDrpeEwQWOz4XunGVMky",
+                "name": "vApp FEATURE",
+                "type": "journey"
+            },
+            {
                 "id": "1WfUG_AySx0DO1dH9ncwrGhoMcXocFQRX",
                 "name": "chatbot",
                 "type": "journey"
@@ -684,6 +955,35 @@
             {
                 "id": "1eamjaUJJmSA0Rg0t59HRmuzc7vugfiXi",
                 "name": "mobile-site",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "zz_BKP",
+        "id": "1l7Sn01xQF4WzM9ddiQgmlCVph1Ef_O-2",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1u2w3VpsUGeTDagii_abxU_xCIuSJPw0Z",
+                "name": "na",
+                "type": "journey"
+            }
+        ]
+    },
+    {
+        "name": "zz_Temp",
+        "id": "1xs15GwSlQv03HumYNBtuC8ZTAZjL2ASw",
+        "type": "player",
+        "subfolders": [
+            {
+                "id": "1UUcWBgr6pQtZ3UX7DEWx6eC5isE3T-Pf",
+                "name": "Nf",
+                "type": "journey"
+            },
+            {
+                "id": "1qbv_eQchHPxg03vPBnlu7NXGx0SKyeOh",
+                "name": "na",
                 "type": "journey"
             }
         ]
